@@ -35,7 +35,6 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
 
     #２番目のウインドウでログアウトをクリックするユーザをシュミレートする
     delete logout_path
-
     follow_redirect!
     assert_select "a[href=?]", login_path
     assert_select "a[href=?]", logout_path,      count: 0
